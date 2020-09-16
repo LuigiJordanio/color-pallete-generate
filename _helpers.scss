@@ -1,0 +1,54 @@
+
+/**
+ * Arquivo de helpers de cores
+ *
+ * Arquivo que gerá classes css que atribuirão as propriedades
+ * de cor
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/color/helpers
+ *  @date  15/04/2020
+ *  @lastmodified 15/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+$PREFIX : 'plt';
+
+/**
+ * Helpers de Cores
+ *
+ * Sessão responsável por gerar as classes helpers 
+ * com as cores solidas
+ *
+ * @section utils/color/helpers/solids
+ */
+@each $color-name, $color-value in $object_color {
+
+    .#{$PREFIX}-color-bg-#{$color-name} {
+        background-color: #{$color-value} !important;
+    }
+
+    .#{$PREFIX}-color-text-#{$color-name} {
+        color: #{$color-value} !important;
+    }
+}
+
+/**
+ * Helpers de Cores
+ *
+ * Sessão responsável por gerar as classes alias dos helpers 
+ * com as cores solidas.
+ *
+ * @section utils/color/helpers/solids
+ */
+@each $color-name, $color-value in $object_color_alias {
+
+    .#{$PREFIX}-bg-#{$color-name} {
+        background-color: #{$color-value} !important;
+    }
+    
+    .#{$PREFIX}-tx-#{$color-name} {
+        color: #{$color-value} !important;
+    }
+}

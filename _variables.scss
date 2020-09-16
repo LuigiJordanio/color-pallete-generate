@@ -1,0 +1,115 @@
+/**
+ *  Bit Box - 1.0
+ *  Arquivo de variáveis sass para cores.
+ *  
+ *  Esse arquivo vai detalhar e armazenar todas as 
+ *  cores utilizadas no Design System como um todo.  
+ *  
+ *  @project BitBox 
+ *  @version 1.0
+ *  @package utils/color/variables
+ *  @date 06/04/2020 
+ *  @lastmodified utils/color/variables 15/04/2020 <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Economica Federal 
+ */
+ 
+/**
+ * Cores Standard
+ * 
+ * Principais cores que vão gerar suas variações
+ *  
+ * @section utils/color/variables/standard_colors
+ */
+
+/**
+ * Azul Bêbê
+ * 
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-bebe
+ */
+ $azul-bebe: #C7E0F4;
+
+/**
+ * Azul Noite
+ * 
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-noite
+ */
+$azul-noite: #163B53;
+
+/**
+ * Turquesa standard
+ * 
+ * Escala HSL da cor Turquesa da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/turquesa
+ */
+$verde-agua: #59C0A0;
+
+/**
+ * Gelo standard
+ * 
+ * Escala HSL da cor Gelo da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/gelo
+ */
+$roxo-violeta: #7B3DC4;
+
+/**
+ * Grafite standard
+ * 
+ * Escala HSL da cor Grafite da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/grafite
+ */
+$amarelo-atencao: #F9CB3D;
+
+/**
+ * Céu Standard
+ *
+ * Escala HSL da cor Céu da paleta Flexível
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/ceu
+ */
+$vermelho-erro: #D02037;
+
+/**
+ * Objeto de Cores
+ *
+ * Objeto com todas as cores standard
+ *
+ * @section utils/color/variables/object_colors
+ */
+$colors: (
+
+    // Brand Colors
+    'bebe':        $azul-bebe,
+    'noite':       $azul-noite,
+    'agua':       $verde-agua,
+    'violeta':     $roxo-violeta,
+    'atencao':   $amarelo-atencao,
+    'erro':    $vermelho-erro,
+);
+
+/**
+ * Escala de Cores
+ *
+ * Escala de cores que será utilizada 
+ * para gerar as demais cores.
+ *
+ * @section utils/color/variables/color_scale
+ */
+$color_scale:8;
+
+
+/**
+ * Número de cores
+ *
+ * Escala de cores que será utilizada 
+ * para gerar as demais cores.
+ *
+ * @section utils/color/variables/color_scale
+ */
+ $color_number:3;
+
