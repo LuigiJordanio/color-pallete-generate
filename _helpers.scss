@@ -52,3 +52,20 @@ $PREFIX : 'plt';
         color: #{$color-value} !important;
     }
 }
+
+
+/**
+ * Helpers de Cores
+ *
+ * Sessão responsável por gerar as classes que incluem gradient no background
+ * com as cores solidas.
+ *
+ * @section utils/color/helpers/gradient
+ */
+ @mixin #{$PREFIX}-linear-gradient($color1,$angle:"90deg",$color2) {
+     background: -webkit-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
+     background: -moz-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
+     background: -ms-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
+     background: -o-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
+     background: linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
+ }
