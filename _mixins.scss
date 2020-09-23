@@ -1,0 +1,70 @@
+/**
+ * Arquivo de helpers de cores
+ *
+ * Arquivo que gerá classes css que atribuirão as propriedades
+ * de cor
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/color/mixins
+ *  @date  15/04/2020
+ *  @lastmodified 15/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+
+/**
+ * Mixin de Cores 
+ *
+ * Sessão responsável por gerar as classes que incluem gradient no background
+ * com as cores solidas.
+ *
+ * @section utils/color/mixins/solids
+ */
+@mixin background-color($color, $opacity: 1) {
+        background: get-color($color,$opacity);
+}
+
+@mixin color($color,$opacity:1) {
+    color: get-color($color,$opacity);
+}
+
+@mixin border-color($color,$opacity:100%,$direction: null) {
+
+    @if($direction)
+    {
+        border-#{$direction}-color: get-color($color,$opacity);
+    }
+    @else{
+        border-color: get-color($color,$opacity);
+    }
+}
+
+@mixin caret-color($color,$opacity:100%){
+    caret-color: get-color($color,$opacity);
+}
+
+@mixin column-rule-color($color,$opacity:100%) {
+    column-rule-color:get-color($color,$opacity);
+}
+
+/**
+ * Mixin de Cores 
+ *
+ * Sessão responsável por gerar as classes que incluem gradient.
+ *
+ * @section utils/color/mixins/gradient
+ */
+@mixin background-gradient($color1,$color2,$angle:90deg,$style:"linear") {
+    background: -webkit-#{$style}-gradient($angle,get-color($color1),get-color($color2));
+    background: -moz-#{$style}-gradient($angle,get-color($color1),get-color($color2));
+    background: -ms-#{$style}-gradient($angle,get-color($color1),get-color($color2));
+    background: -o-#{$style}-gradient($angle,get-color($color1),get-color($color2));
+    background: #{$style}-gradient($angle,get-color($color1),get-color($color2));
+}
+
+@mixin color-gradient($color1,$color2,$angle:90deg,$style:"linear") {
+    @include background-gradient($color1,$color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

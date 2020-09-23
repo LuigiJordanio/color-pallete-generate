@@ -1,4 +1,3 @@
-
 /**
  * Arquivo de helpers de cores
  *
@@ -25,47 +24,56 @@ $PREFIX : 'plt';
  */
 @each $color-name, $color-value in $object_color {
 
-    .#{$PREFIX}-color-bg-#{$color-name} {
-        background-color: #{$color-value} !important;
+    .bg-#{$color-name} {
+        @include background-color($color-name);
     }
 
-    .#{$PREFIX}-color-text-#{$color-name} {
-        color: #{$color-value} !important;
+    .tx-#{$color-name} {
+        @include color($color-name);
+    }
+
+    @each $direction in top,bottom,left,right {
+        .border-color-#{$direction}-#{$color-name} {
+            @include border-color($color-name,1,$direction);
+        }
+    }
+
+    .border-color-#{$color-name} {
+        @include border-color($color-name);
+    }
+
+    @each $color-name-2, $color-value-2 in $object_color {
+        @if $color-name-2 != $color-name {
+
+            .bg-gr-#{$color-name}-#{$color-name-2}{
+                @include background-gradient($color-name,$color-name-2)
+            }
+
+            .tx-gr-#{$color-name}-#{$color-name-2}{
+                @include color-gradient($color-name,$color-name-2)
+            }
+        }
+    }
+
+    .caret-color-#{$color-name} {
+        @include caret-color($color-name);
+    }
+
+
+    .column-rule-color-#{$color-name} {
+        @include column-rule-color($color-name);
     }
 }
 
-/**
- * Helpers de Cores
- *
- * Sessão responsável por gerar as classes alias dos helpers 
- * com as cores solidas.
- *
- * @section utils/color/helpers/solids
- */
-@each $color-name, $color-value in $object_color_alias {
-
-    .#{$PREFIX}-bg-#{$color-name} {
-        background-color: #{$color-value} !important;
-    }
-    
-    .#{$PREFIX}-tx-#{$color-name} {
-        color: #{$color-value} !important;
-    }
+.bg-transparent{
+    background-color: transparent;
 }
 
+.tx-transparent{
+    color: transparent;
+}
 
-/**
- * Helpers de Cores
- *
- * Sessão responsável por gerar as classes que incluem gradient no background
- * com as cores solidas.
- *
- * @section utils/color/helpers/gradient
- */
- @mixin #{$PREFIX}-linear-gradient($color1,$angle:"90deg",$color2) {
-     background: -webkit-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
-     background: -moz-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
-     background: -ms-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
-     background: -o-linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
-     background: linear-gradient($angle,map-get($object_color,$color1),map-get($object_color,$color2));
- }
+.border-color-transparent{
+    border-color: transparent;
+}
+

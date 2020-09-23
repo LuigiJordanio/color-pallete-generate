@@ -1,4 +1,18 @@
 /**
+ * Arquivo de objeto de cores
+ *
+ * Arquivo que será responsável por gerar objeto das cores
+ *
+ *  @project Pallete Colors
+ *  @version 1.0
+ *  @package colors
+ *  @date  15/04/2020
+ *  @lastmodified 15/04/2020  <luigijordanio@gmail.com>
+ *  @creator Luigi Oliveira <luigijordanio@gmail.com>
+ *  @copyright 2020, 8Pixeldg 
+ */
+
+/**
  * Objeto de cores
  *
  * Objeto de cores que vai ser populado com 
@@ -7,23 +21,22 @@
  * @subsection utils/color/variables/object_colors/
  */
  $object_color:(); // Nome Completo
- $object_color_alias:(); // Apelidos
  
  @each $color-name, $color-value in $colors {
+
  
- 
-    $initial: str-slice(#{$color-name}, 1,3); // 3 primeras letras do nome da cor
+    $initial: str-slice($color-name,1,3); // 3 primeras letras do nome da cor
     
      /**
       * Cores Standard
       *
       * @subsection utils/color/variables/object_colors/standard_color
       */
-     $standard_color: (#{$color-name} : #{$color-value}); // Cor Standard
-     $standard_color_alias: (#{$initial}-s: #{$color-value}); // Apelido de cor Standard
+     $standard_color: ($color-name:$color-value); // Cor Standard
+
+     $standard_color_alias: ($initial: $color-value); // Apelido de cor Standard
      
      $object_color: map-merge($object_color,$standard_color); // Incrimentando objeto de cores
-     $object_color_alias: map-merge($object_color_alias,$standard_color_alias); // Incrimentando objeto de apelido cores
      
      /**
       * Cores Mais Claras
@@ -32,12 +45,9 @@
       */
      @for $i from 1 to ($color_number+1) {
          
-         $lighter_color: (#{$color-name}-lighter-#{$i} : lighten($color-value,($color_scale*$i)));
-         
-         $lighter_color_alias: (#{$initial}-l#{$i} : lighten($color-value,($color_scale*$i)));
+         $lighter_color: (#{$color-name}-l#{$i} : lighten($color-value,($color_scale*$i)));
  
          $object_color: map-merge($object_color,$lighter_color);
-         $object_color_alias: map-merge($object_color_alias,$lighter_color_alias);
      }
  
      /**
@@ -47,107 +57,9 @@
      */
      @for $i from 1 to ($color_number+1) {
  
-         $darker_color: (#{$color-name}-darker-#{$i}: darken($color-value,($color_scale*$i)));
-         $darker_color_alias: (#{$initial}-d#{$i} : darken($color-value,($color_scale*$i)));
+         $darker_color: (#{$color-name}-d#{$i}: darken($color-value,($color_scale*$i)));
  
          $object_color: map-merge($object_color,$darker_color);
-         $object_color_alias: map-merge($object_color_alias,$darker_color_alias);
      }
      
  }
-
-
-// /**
-//  * Padrão de cores gradient
-//  *
-//  * Objeto com cores gradientes
-//  *
-//  * @section utils/color/variables/object_colors/gradient_colors
-//  */
-// $gradient_colors: (
-
-//     'gradient-oceano':  // Gradient Oceano 
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     + ' 30%' ,
-//     'gradient-ceu': // Gradient Céu
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'ceu-standard')          + ' 30%' ,
-//     'gradient-uva': // Gradient Uva
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'uva-standard')          + ' 30%',
-//     'gradient-limao': // Gradient Limão
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     +' 40%,'+
-//         map-get($object_color, 'limao-standard')        +' 70%',
-//     'gradient-tangerina': // Gradient Tangerina
-//         map-get($object_color, 'azul_cx-standard')       + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')      + ' 40%,' +
-//         map-get($object_color, 'tangerina-standard')     + ' 70%' ,
-//     'gradient-goiaba': // Gradient Goiaba
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     + ' 40%,' +
-//         map-get($object_color, 'goiaba-standard')       + ' 70%' ,
-//     'gradient-agua': // Gradient Água
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'ceu-standard')          + ' 50%' ,
-//     'gradient-primavera': // Gradient Primavera
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'uva-standard')          + ' 50%',
-//     'gradient-inverno': // Gradient Inverno
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'limao-standard')        + ' 50%',
-//     'gradient-verao': // Gradient Verão
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'tangerina-standard')    + ' 50%' ,
-//     'gradient-outono': // Gradient Outono
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'goiaba-standard')       + ' 50%'
-// );
-
-// $gradient_colors_alias:(
-//     'gr-oce' : // Gradient Ocenano Apelido
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     + ' 30%' ,
-//     'gr-ceu' : // Gradient Céu Apelido
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'ceu-standard')          + ' 30%' ,
-//     'gr-uva' : // Gradient Uva Apelido
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'uva-standard')          + ' 30%',
-//     'gr-lim' : // Gradient Limão Apelido
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     +' 40%,'+
-//         map-get($object_color, 'limao-standard')        +' 70%',
-//     'gr-tan' : // Gradient Tangerina Apelido
-//         map-get($object_color, 'azul_cx-standard')       + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')      + ' 40%,' +
-//         map-get($object_color, 'tangerina-standard')     + ' 70%' ,
-//     'gr-goi' : // Gradient Goiaba Apelido
-//         map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
-//         map-get($object_color, 'turquesa-standard')     + ' 40%,' +
-//         map-get($object_color, 'goiaba-standard')       + ' 70%' ,
-//     'gr-agu' : // Gradient Água Apelido
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'ceu-standard')          + ' 50%' ,
-//     'gr-pri' : // Gradient Primavera Apelido
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'uva-standard')          + ' 50%',
-//     'gr-inv' : // Gradient Inverno Apelido
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'limao-standard')        + ' 50%',
-//     'gr-ver' : // Gradient Verão Apelido
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'tangerina-standard')    + ' 50%' ,
-//     'gr-out' : // Gradient Outono Apelido
-//         map-get($object_color, 'turquesa-standard')     + ' 0%,' +
-//         map-get($object_color, 'goiaba-standard')       + ' 50%'
-// );
-
-
-// /**
-//  * Angulatura de padrão gradiente de cores
-//  *
-//  * @subsection utils/color/variables/object_colors/gradient_colors/angle_pattern
-//  */
-// $deg_default: 90deg;
-

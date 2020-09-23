@@ -1,0 +1,17 @@
+/**
+ * Arquivo de functions de cores
+ *
+ * Arquivo que será responsável por armazenar funções que vão retornar o hexadecimal das cores
+ *
+ *  @project Pallete Colors
+ *  @version 1.0
+ *  @package utils/color/mixins
+ *  @date  15/04/2020
+ *  @lastmodified 15/04/2020  <luigijordanio@gmail.com>
+ *  @creator Luigi Oliveira <luigijordanio@gmail.com>
+ *  @copyright 2020, 8Pixeldg 
+ */
+
+ @function get-color($color,$opacity:1){ 
+     @return rgba(map-get($object_color,$color),$opacity);
+ }

@@ -28,7 +28,7 @@
  *  
  * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-bebe
  */
- $azul-bebe: #C7E0F4;
+ $azul-bebe: rgb(199, 224, 244);
 
 /**
  * Azul Noite
@@ -36,7 +36,7 @@
  *  
  * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-noite
  */
-$azul-noite: #163B53;
+$azul-noite: rgb(22, 59, 83);
 
 /**
  * Turquesa standard
@@ -45,7 +45,7 @@ $azul-noite: #163B53;
  *  
  * @subsection utils/color/variables/standard_colors/paleta_fixa/turquesa
  */
-$verde-agua: #59C0A0;
+$verde-agua: rgb(89, 192, 160);
 
 /**
  * Gelo standard
@@ -54,7 +54,7 @@ $verde-agua: #59C0A0;
  *  
  * @subsection utils/color/variables/standard_colors/paleta_fixa/gelo
  */
-$roxo-violeta: #7B3DC4;
+$roxo-violeta: rgb(123, 61, 196);
 
 /**
  * Grafite standard
@@ -63,7 +63,7 @@ $roxo-violeta: #7B3DC4;
  *  
  * @subsection utils/color/variables/standard_colors/paleta_fixa/grafite
  */
-$amarelo-atencao: #F9CB3D;
+$amarelo-atencao: rgb(249, 203, 61);
 
 /**
  * Céu Standard
@@ -72,7 +72,7 @@ $amarelo-atencao: #F9CB3D;
  *
  * @subsection utils/color/variables/standard_colors/paleta_flexivel/ceu
  */
-$vermelho-erro: #D02037;
+$vermelho-erro: rgb(208, 32, 55);
 
 /**
  * Objeto de Cores
@@ -84,12 +84,12 @@ $vermelho-erro: #D02037;
 $colors: (
 
     // Brand Colors
-    'bebe':        $azul-bebe,
-    'noite':       $azul-noite,
-    'agua':       $verde-agua,
-    'violeta':     $roxo-violeta,
-    'atencao':   $amarelo-atencao,
-    'erro':    $vermelho-erro,
+    bebe: $azul-bebe,
+    noite:$azul-noite,
+    agua:$verde-agua,
+    violeta: $roxo-violeta,
+    atencao: $amarelo-atencao,
+    erro: $vermelho-erro,
 );
 
 /**
@@ -112,4 +112,3 @@ $color_scale:8;
  * @section utils/color/variables/color_scale
  */
  $color_number:3;
-
