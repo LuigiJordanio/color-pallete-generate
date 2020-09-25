@@ -20,12 +20,9 @@
  * 
  * @subsection utils/color/variables/object_colors/
  */
- $object_color:(); // Nome Completo
+ $object_color:(); // Objeto com as cores
  
  @each $color-name, $color-value in $colors {
-
- 
-    $initial: str-slice($color-name,1,3); // 3 primeras letras do nome da cor
     
      /**
       * Cores Standard
@@ -33,8 +30,6 @@
       * @subsection utils/color/variables/object_colors/standard_color
       */
      $standard_color: ($color-name:$color-value); // Cor Standard
-
-     $standard_color_alias: ($initial: $color-value); // Apelido de cor Standard
      
      $object_color: map-merge($object_color,$standard_color); // Incrimentando objeto de cores
      
@@ -61,5 +56,4 @@
  
          $object_color: map-merge($object_color,$darker_color);
      }
-     
  }

@@ -15,3 +15,14 @@
  @function get-color($color,$opacity:1){ 
      @return rgba(map-get($object_color,$color),$opacity);
  }
+
+
+ @function get-color-test($color,$style:'standard',$opacity:1){ 
+    $colorString: $color + '-' + $style;
+    @return rgba(map-get($object_color,$colorString),$opacity);
+}
+ // Luigi
+ .test{
+     padding: 1px;
+     background: get-color-test('bebe','l1');
+ }
