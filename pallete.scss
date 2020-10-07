@@ -3,7 +3,3 @@
 @import "functions";
 @import "mixins";
 @import "helpers";
-
-.bg-test{
-    @include background-color('bebe',.5);
-}

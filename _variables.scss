@@ -22,57 +22,6 @@
  * @section utils/color/variables/standard_colors
  */
 
-/**
- * Azul Bêbê
- * 
- *  
- * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-bebe
- */
- $azul-bebe: #c7e0f4;
-
-/**
- * Azul Noite
- * 
- *  
- * @subsection utils/color/variables/standard_colors/paleta_fixa/azul-noite
- */
-$azul-noite: #163b53;
-
-/**
- * Turquesa standard
- * 
- * Escala HSL da cor Turquesa da paleta Fixa
- *  
- * @subsection utils/color/variables/standard_colors/paleta_fixa/turquesa
- */
-$verde-agua: #59c0a0;
-
-/**
- * Gelo standard
- * 
- * Escala HSL da cor Gelo da paleta Fixa
- *  
- * @subsection utils/color/variables/standard_colors/paleta_fixa/gelo
- */
-$roxo-violeta: #7b3dc4;
-
-/**
- * Grafite standard
- * 
- * Escala HSL da cor Grafite da paleta Fixa
- *  
- * @subsection utils/color/variables/standard_colors/paleta_fixa/grafite
- */
-$amarelo-atencao: #f9cb3d;
-
-/**
- * Céu Standard
- *
- * Escala HSL da cor Céu da paleta Flexível
- *
- * @subsection utils/color/variables/standard_colors/paleta_flexivel/ceu
- */
-$vermelho-erro: #d02037;
 
 /**
  * Objeto de Cores
@@ -84,12 +33,11 @@ $vermelho-erro: #d02037;
 $colors: (
 
     // Brand Colors
-    bebe: $azul-bebe,
-    noite:$azul-noite,
-    agua:$verde-agua,
-    violeta: $roxo-violeta,
-    atencao: $amarelo-atencao,
-    erro: $vermelho-erro,
+    penelope: #ff00ff,
+    lemonade: #00ff99,
+    // color-name-3: $color-name-3, ...
+
+    // Coloque quantas cores quiser
 );
 
 /**

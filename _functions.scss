@@ -12,17 +12,17 @@
  *  @copyright 2020, 8Pixeldg 
  */
 
- @function get-color($color,$opacity:1){ 
-     @return rgba(map-get($object_color,$color),$opacity);
- }
+/**
+ * Função responsável por retornar o hexadecimal da cor desejada
+ *
+ * @section utils/color/functions/get-color
+ */
+ @function get-color($color,$style: null,$opacity:1){ 
 
+    $colorString: $color;
+    @if($style){
+        $colorString: $color + '-' + $style;
+    }
 
- @function get-color-test($color,$style:'standard',$opacity:1){ 
-    $colorString: $color + '-' + $style;
     @return rgba(map-get($object_color,$colorString),$opacity);
 }
- // Luigi
- .test{
-     padding: 1px;
-     background: get-color-test('bebe','l1');
- }
