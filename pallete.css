@@ -1,0 +1,20 @@
+/* Error: $color: null is not a color.
+ *    ,
+ * 27 |     @return rgba(map-get($object_color,$colorString),$opacity);
+ *    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   _functions.scss 27:13  get-color()
+ *   _mixins.scss 25:21     background-color()
+ *   _helpers.scss 28:9     @import
+ *   pallete.scss 5:9       root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: $color: null is not a color.\a    \2577 \a 27 \2502      @return rgba(map-get($object_color,$colorString),$opacity);\a    \2502              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   _functions.scss 27:13  get-color()\a   _mixins.scss 25:21     background-color()\a   _helpers.scss 28:9     @import\a   pallete.scss 5:9       root stylesheet";
+}

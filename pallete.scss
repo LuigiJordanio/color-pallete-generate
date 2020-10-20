@@ -5,5 +5,5 @@
 @import "helpers";
 
 .bg-test{
-    @include background-color('bebe',.5);
+    // @include background-gradient(get-color('bebe'),get-color('noite'))
 }

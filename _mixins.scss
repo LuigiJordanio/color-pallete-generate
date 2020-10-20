@@ -56,11 +56,11 @@
  * @section utils/color/mixins/gradient
  */
 @mixin background-gradient($color1,$color2,$angle:90deg,$style:"linear") {
-    background: -webkit-#{$style}-gradient($angle,get-color($color1),get-color($color2));
-    background: -moz-#{$style}-gradient($angle,get-color($color1),get-color($color2));
-    background: -ms-#{$style}-gradient($angle,get-color($color1),get-color($color2));
-    background: -o-#{$style}-gradient($angle,get-color($color1),get-color($color2));
-    background: #{$style}-gradient($angle,get-color($color1),get-color($color2));
+    background: -webkit-#{$style}-gradient($angle,$color1,$color2);
+    background: -moz-#{$style}-gradient($angle,$color1,$color2);
+    background: -ms-#{$style}-gradient($angle,$color1,$color2);
+    background: -o-#{$style}-gradient($angle,$color1,$color2);
+    background: #{$style}-gradient($angle,$color1,$color2);
 }
 
 @mixin color-gradient($color1,$color2,$angle:90deg,$style:"linear") {

@@ -12,7 +12,6 @@
  *  @copyright 2020, Caixa Econômica Federal 
  */
 
-$PREFIX : 'plt';
 
 /**
  * Helpers de Cores
@@ -25,6 +24,7 @@ $PREFIX : 'plt';
 @each $color-name, $color-value in $object_color {
 
     .bg-#{$color-name} {
+        @debug $color-name;
         @include background-color($color-name);
     }
 
