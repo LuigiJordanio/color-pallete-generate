@@ -21,10 +21,13 @@
  *
  * @section utils/color/helpers/solids
  */
-@each $color-name, $color-value in $object_color {
-
+@each $color-name, $color-value in $colors {
+    
     .bg-#{$color-name} {
-        @debug $color-name;
+        @include background-color($color-name);
+    }
+
+    .bg-#{str-slice($color-name,1,3)} {
         @include background-color($color-name);
     }
 
@@ -32,37 +35,91 @@
         @include color($color-name);
     }
 
-    @each $direction in top,bottom,left,right {
-        .border-color-#{$direction}-#{$color-name} {
-            @include border-color($color-name,1,$direction);
-        }
+    .tx-#{str-slice($color-name,1,3)} {
+        @include color($color-name);
     }
 
-    .border-color-#{$color-name} {
+    .border-#{$color-name} {
         @include border-color($color-name);
     }
 
-    @each $color-name-2, $color-value-2 in $object_color {
-        @if $color-name-2 != $color-name {
+    .br-#{str-slice($color-name,1,3)} {
+        @include color($color-name);
+    }
 
-            .bg-gr-#{$color-name}-#{$color-name-2}{
-                @include background-gradient($color-name,$color-name-2)
+    @each $style in darker,lighter {
+
+        @for $i from 1 to ($color_number+1) {
+
+            $styleSlice: str-slice($style,1,1);
+            $style-name : #{$styleSlice}#{$i};
+
+            // Full name
+            .bg-#{$color-name}-#{$style}-#{$i} {
+                @include background-color($color-name,$style-name);
             }
 
-            .tx-gr-#{$color-name}-#{$color-name-2}{
-                @include color-gradient($color-name,$color-name-2)
+            // Alias
+            .bg-#{str-slice($color-name,1,3)}-#{$style-name} {
+                @include background-color($color-name,$style-name);
+            }
+
+            // Full name
+            .tx-#{$color-name}-#{$style}-#{$i} {
+                @include color($color-name,$style-name);
+            }
+
+            // Alias
+            .tx-#{str-slice($color-name,1,3)}-#{$style-name} {
+                @include color($color-name,$style-name);
+            }
+          
+            // Border
+            .border-#{$color-name}-#{$style}-#{$i} {
+                @include border-color($color-name,$style-name);
+            }
+
+            // Border Alias
+            .br-#{str-slice($color-name,1,3)}-#{$style-name} {
+                @include border-color($color-name,$style-name);
+            }
+
+            @each $direction in top,bottom,left,right {
+                
+                // Border
+                .border-#{$color-name}-#{$style}-#{$i} {
+                    @include border-color($color-name,$style-name,1,$direction);
+
+                }
+
+                .br-#{str-slice($direction,1,1)}-#{str-slice($color-name,1,3)}-#{$style-name} {
+
+                    @include border-color($color-name,$style-name,1,$direction);
+                }
+            }
+
+            @each $color-name-2, $color-value-2 in $colors {
+                @if $color-name-2 != $color-name {
+        
+                    .bg-gr-#{$color-name}-#{$color-name-2}{
+                        @include background-gradient($color-value,$color-value-2)
+                    }
+        
+                    .tx-gr-#{$color-name}-#{$color-name-2}{
+                        @include color-gradient($color-value,$color-value-2)
+                    }
+                }
             }
         }
     }
 
-    .caret-color-#{$color-name} {
-        @include caret-color($color-name);
-    }
 
 
-    .column-rule-color-#{$color-name} {
-        @include column-rule-color($color-name);
-    }
+    
+
+    
+
+    
 }
 
 .bg-transparent{

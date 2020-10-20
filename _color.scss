@@ -29,6 +29,7 @@
       *
       * @subsection utils/color/variables/object_colors/standard_color
       */
+    
      $standard_color: ($color-name:$color-value); // Cor Standard
      
      $object_color: map-merge($object_color,$standard_color); // Incrimentando objeto de cores

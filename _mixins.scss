@@ -13,6 +13,7 @@
  */
 
 
+
 /**
  * Mixin de Cores 
  *
@@ -21,31 +22,24 @@
  *
  * @section utils/color/mixins/solids
  */
-@mixin background-color($color, $opacity: 1) {
-        background: get-color($color,$opacity);
+ @mixin background-color($color,$style:null,$opacity: 1) {
+     
+    background: get-color($color,$style,$opacity);
 }
 
-@mixin color($color,$opacity:1) {
-    color: get-color($color,$opacity);
+@mixin color($color,$style:null,$opacity:1) {
+    color: get-color($color,$style,$opacity);
 }
 
-@mixin border-color($color,$opacity:100%,$direction: null) {
+@mixin border-color($color,$style:null,$opacity:100%,$direction: null) {
 
     @if($direction)
     {
-        border-#{$direction}-color: get-color($color,$opacity);
+        border-#{$direction}-color: get-color($color,$style,$opacity);
     }
     @else{
-        border-color: get-color($color,$opacity);
+        border-color: get-color($color,$style,$opacity);
     }
-}
-
-@mixin caret-color($color,$opacity:100%){
-    caret-color: get-color($color,$opacity);
-}
-
-@mixin column-rule-color($color,$opacity:100%) {
-    column-rule-color:get-color($color,$opacity);
 }
 
 /**
