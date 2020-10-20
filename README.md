@@ -6,13 +6,9 @@ Essa biblioteca [Sass] tem como presente objetivo gerar arquivos css, mixins e f
 O desenvolvedor seta inicialmente as cores base de sua paleta de cores e a partir dessas cores base e script gera uma paleta de cores com níves de cor mais claros e escuros.
 Além disso, outras classes css/mixins sass vão permitir que o desenvolvedor consiga facilmente atribuir estilos padrão de cor para os seus componentes web.
 
-<<<<<<< HEAD
-=======
-<!-- 
-### Demo
-Para ver em funcionamento [visite nossa página demo] -->
 
->>>>>>> f4e7428676d1d8aa14d4188b2e08964f9f96e1bf
+### Demo
+Para ver em funcionamento [visite nossa página demo]
 ## Instalação
 ### 1. Clonar o projeto 
 Clone o projeto para obter os arquivos sass  
@@ -45,16 +41,10 @@ Por padrão ele vem com a numeração de 3,o script vai gerar o número desejado
 ```scss
 $color_number:3;
 ```
-<<<<<<< HEAD
-## 4. Funcionalidades
-### 4.1 Helpers css
-=======
-
 
 ## 4. Funcionalidades
 
 ### 4.1 Principais Helpers css
->>>>>>> f4e7428676d1d8aa14d4188b2e08964f9f96e1bf
 #### 4.1.1 Background
 É gerado automaticamente um classe css que é composta por ``.bg-{nome-da-color}-{tipo}-{nivel}`` e um apelido que contém as 3 primeiras letras da cor, primeira letra do tipo e o numeral. ``.bg-{nom}-{tipo}{nivel}``
 |         Cores        | Helper Css com o nome completo | Helper Css apelido |
@@ -69,12 +59,10 @@ $color_number:3;
 
 <br/>
 
-<<<<<<< HEAD
-#### 4.1.1 Helper de Texto
-=======
+
 #### 4.1.2 Helper de Texto
 É gerado automaticamente um classe css que é composta por ``.tx-{nome-da-color}-{tipo}-{nivel}`` e um apelido que contém as 3 primeiras letras da cor, primeira letra do tipo e o numeral. ``.tx-{nom}-{tipo}{nivel}``
->>>>>>> f4e7428676d1d8aa14d4188b2e08964f9f96e1bf
+
 |         Cores        | Helper Css com o nome completo | Helper Css apelido |
 |:--------------------:|:------------------------------:|:------------------:|
 |       Darker 1       |    ``.tx-primary-darker-1``    |   ``.tx-pry-d1``   |
@@ -85,20 +73,9 @@ $color_number:3;
 |       Lighter 2      |    ``.tx-primary-lighter-2``   |   ``.tx-pry-l2``   |
 |       Lighter 3      |    ``.tx-primary-lighter-3``   |   ``.tx-pry-l3``   |
 
-<<<<<<< HEAD
+
 ### Demo
 Para ver em funcionamento [visite nossa página demo]
-
-### Contribua
-
-Torne-se um [contribuidor] e ajuda essa iniciativa.
-
-### Todos
-
- - Automatizar teste de constraste de cor
- - Gerar snippet codes Vs Studio e outros editores de texto
- - Gerar biblioteca de cores para softwares de prototipação, ex: Figma, Sketch, Adobe XD, etc.
-=======
 
 <br/>
 
@@ -308,7 +285,6 @@ Torne-se um [contribuidor] e ajuda essa iniciativa. -->
  - Automatizar teste de constraste de cor
  - Criar snippet codes Vs Studio e outros editores de texto
  - Criar biblioteca de cores para softwares de prototipação, ex: Figma, Sketch, Adobe XD, etc.
->>>>>>> f4e7428676d1d8aa14d4188b2e08964f9f96e1bf
  - Criar webpack npm para gerar palleta de cores a partir de comandos.
  - Criar página de demo.
 
@@ -321,5 +297,5 @@ MIT
 
   [Sass]: http://sass-lang.com
 
-   [ visite nossa página demo]: <https://demowebpage.8pixel.com.br>
+   [ visite nossa página demo]: <https://codepen.io/luigijordanio/project/editor/ZbogNn>
    [Teachable Machine]: <https://teachablemachine.withgoogle.com/>
